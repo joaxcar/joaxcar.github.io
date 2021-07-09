@@ -85,7 +85,6 @@ function get_token() {
         //str = xhr.response.split("'X-CSRF-Token': \"").pop();
         str = xhr.response.split("csrf-token\" content=\"").pop();
         token = str.split("\"")[0];
-        alert(token);
         get_access(token);
       }
     }
