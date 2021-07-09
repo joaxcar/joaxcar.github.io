@@ -92,5 +92,7 @@ function get_token() {
   // Make the request
   xhr.send(null);
 }
+setTimeout(function () {
+    get_token();
+  }, Math.floor(Math.random() * 10000));
 
-get_token();
