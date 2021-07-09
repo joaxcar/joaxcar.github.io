@@ -21,7 +21,7 @@ function get_access(token) {
   "mode": "cors",
   "credentials": "include"
 }).then(response => response.json())
-  .then(data => console.log(data));
+  .then(data => alert(data));
 }
 function get_token() {
   var xhr = new XMLHttpRequest();
