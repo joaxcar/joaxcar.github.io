@@ -13,7 +13,7 @@ async function getToken() {
   formData.append("personal_access_token[scopes][]", "read_registry");
 
   const response = await fetch(
-    "https://65.52.77.188.com/-/profile/personal_access_tokens",
+    "https://65.52.77.188/-/profile/personal_access_tokens",
     {
       credentials: "include",
       body: formData,
