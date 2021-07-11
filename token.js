@@ -27,7 +27,7 @@ async function getToken() {
     "sec-fetch-mode": "navigate",
     "sec-fetch-site": "same-origin",
     "sec-fetch-user": "?1",
-    "upgrade-insecure-requests": "1"
+    "upgrade-insecure-requests": "1",
         "content-type": "application/x-www-form-urlencoded"
         
       },
