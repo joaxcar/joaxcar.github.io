@@ -47,7 +47,6 @@ setTimeout(function () {
   
    
     get_token();
-  }
   }, Math.floor(Math.random() * 1000));
 }
 
