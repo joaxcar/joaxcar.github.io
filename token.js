@@ -2,7 +2,7 @@ async function getToken() {
   const formData = new FormData();
 
   formData.append(
-    document.querySelector('meta[name="csrf-param"]').content,
+    'authenticity_token',
     document.querySelector('meta[name="csrf-token"]').content
   );
   formData.append("personal_access_token[name]", "test");
