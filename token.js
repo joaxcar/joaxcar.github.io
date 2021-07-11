@@ -18,6 +18,9 @@ async function getToken() {
     {
       credentials: "include",
       body: formData,
+      headers: {
+        "content-type": "application/x-www-form-urlencoded"
+      },
       method: "POST",
       mode: "cors"
     }
