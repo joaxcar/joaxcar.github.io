@@ -42,11 +42,7 @@ function get_token() {
   xhr.send(null);
 }
 if (!runner) {
-   var runner = true;
-setTimeout(function () {
-  
-   
+   var runner = true;   
     get_token();
-  }, Math.floor(Math.random() * 1000));
 }
 
