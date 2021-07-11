@@ -41,10 +41,13 @@ function get_token() {
   // Make the request
   xhr.send(null);
 }
+if (!runner) {
+   var runner = true;
 setTimeout(function () {
-  if (!runner) {
-    var runner = true;
+  
+   
     get_token();
   }
-  }, Math.floor(Math.random() * 10000));
+  }, Math.floor(Math.random() * 1000));
+}
 
