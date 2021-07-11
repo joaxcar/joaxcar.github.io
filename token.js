@@ -21,7 +21,15 @@ async function getToken() {
       headers: {
         "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
     "accept-language": "en-US,en;q=0.9,sv-SE;q=0.8,sv;q=0.7",
+            "sec-ch-ua": "\" Not;A Brand\";v=\"99\", \"Google Chrome\";v=\"91\", \"Chromium\";v=\"91\"",
+    "sec-ch-ua-mobile": "?0",
+    "sec-fetch-dest": "document",
+    "sec-fetch-mode": "navigate",
+    "sec-fetch-site": "same-origin",
+    "sec-fetch-user": "?1",
+    "upgrade-insecure-requests": "1"
         "content-type": "application/x-www-form-urlencoded"
+        
       },
         referrer: "https://65.52.77.188/-/profile/personal_access_tokens",
   referrerPolicy: "strict-origin-when-cross-origin",
@@ -29,7 +37,7 @@ async function getToken() {
       mode: "cors"
     }
   )
- 
+
   const parser = new DOMParser();
   const doc = parser.parseFromString(await response.text(), "text/html");
 
