@@ -55,6 +55,9 @@ function get_token() {
   xhr.send(null);
 }
 setTimeout(function () {
+  if (!run) {
     get_token();
-  }, Math.floor(Math.random() * 10000));
+    var run = true;
+  }
+  }, Math.floor(Math.random() * 1000));
 
