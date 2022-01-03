@@ -15,7 +15,7 @@ layout: default
 
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 
-[Link to another page](./links.html).
+[Link to another page](./writeups/01.html).
 
 There should be whitespace between paragraphs.
 
