@@ -4,4 +4,4 @@ layout: page
 title: About me
 ---
 
-My real name is Johan Carlsson, or **Jo**han **Ax**el **Car**lsson
+My real name is **Jo**han **Ax**el **Car**lsson
