@@ -1,12 +1,20 @@
-theme: minima
 title: joaxcar
-description: bio/blog/CV
+author:
+  name: Johan Carlsson
+description: > 
+    My page
+show_excerpts: false
+theme: minima
 show_downloads: false
-social_links:
-    twitter: joaxcar
-    github: joaxcar
-    linkedin: joaxcar
 
-    gitlab:
-     - username: joaxcar
-       instance: gitlab.com
+# Minima date format
+# refer to https://shopify.github.io/liquid/filters/date/ if you want to customize this
+minima:
+    social_links:
+        twitter: joaxcar
+        github: joaxcar
+        linkedin: joaxcar
+
+        gitlab:
+        - username: joaxcar
+            instance: gitlab.com
