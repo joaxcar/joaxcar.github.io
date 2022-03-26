@@ -1,4 +1,3 @@
-title: joaxcar
 description: My very nice blog
 author: "Johan Carlsson"
 
@@ -7,12 +6,12 @@ theme: minima
 # Minima: show excerpts in the frontpage
 show_excerpts: true
 
+twitter: joaxcar
+github: joaxcar
+linkedin: joaxcar
+
 minima:
   date_format: "%Y-%m-%d"
-  social_links:
-    twitter: joaxcar
-    github: joaxcar
-    linkedin: joaxcar
 
 # Minima: custom header links
 header_pages:
