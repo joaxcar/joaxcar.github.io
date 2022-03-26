@@ -1,7 +1,7 @@
 ---
 permalink: /links
 layout: page
-title: Links and misc
+title: Links
 ---
 
 Will try to list links to my CVE's and POC's here
