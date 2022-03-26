@@ -2,3 +2,11 @@ theme: minima
 title: joaxcar
 description: bio/blog/CV
 show_downloads: false
+social_links:
+    twitter: joaxcar
+    github: joaxcar
+    linkedin: joaxcar
+
+    gitlab:
+     - username: joaxcar
+       instance: gitlab.com
