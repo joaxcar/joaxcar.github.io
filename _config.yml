@@ -13,6 +13,9 @@ linkedin_username: joaxcar
 
 minima:
   date_format: "%Y-%m-%d"
+  social_links:
+    twitter: joaxcar
+    github:  joaxcar
 
 # Minima: custom header links
 header_pages:
